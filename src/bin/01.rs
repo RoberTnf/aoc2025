@@ -93,10 +93,7 @@ fn solve_second(data: Vec<i32>) {
 }
 
 fn main() {
-    let data = process_data("data/data.txt");
-    // let test_data = process_data("data/test.txt");
-    //solve_first(test_data.clone());
-    //solve_second(test_data);
+    let data = process_data("data/01.txt");
     solve_first(data.clone());
     solve_second(data);
 }

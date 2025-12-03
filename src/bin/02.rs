@@ -80,8 +80,8 @@ fn solve_second(data: Vec<[u64; 2]>) -> u64 {
 }
 
 fn main() {
-    println!("{}", solve_first(load_data("data/data.txt").unwrap()));
-    println!("{}", solve_second(load_data("data/data.txt").unwrap()));
+    println!("{}", solve_first(load_data("data/02.txt").unwrap()));
+    println!("{}", solve_second(load_data("data/02.txt").unwrap()));
 }
 
 mod tests {
@@ -89,19 +89,19 @@ mod tests {
 
     #[test]
     fn test_load_data() {
-        let data = load_data("data/test.txt").unwrap();
+        let data = load_data("data/02_test.txt").unwrap();
         assert_eq!(data.len(), 11);
     }
 
     #[test]
     fn test_solve_first() {
-        let data = load_data("data/test.txt").unwrap();
+        let data = load_data("data/02_test.txt").unwrap();
         assert_eq!(solve_first(data), 1227775554);
     }
 
     #[test]
     fn test_solve_second() {
-        let data = load_data("data/test.txt").unwrap();
+        let data = load_data("data/02_test.txt").unwrap();
         assert_eq!(solve_second(data), 4174379265);
     }
 }

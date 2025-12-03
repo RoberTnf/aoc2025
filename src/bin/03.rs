@@ -8,7 +8,7 @@ fn load_data(path: &str) -> Result<Vec<String>, std::io::Error> {
 }
 
 fn main() {
-    let data = load_data("data/data.txt").unwrap();
+    let data = load_data("data/03.txt").unwrap();
     println!("{}", solve_first(data.clone()));
     println!("{}", solve_second(data));
 }
@@ -79,19 +79,19 @@ mod tests {
 
     #[test]
     fn test_load_data() {
-        let data = load_data("data/test.txt").unwrap();
+        let data = load_data("data/03_test.txt").unwrap();
         assert_eq!(data.len(), 4);
     }
 
     #[test]
     fn test_solve_first() {
-        let data = load_data("data/test.txt").unwrap();
+        let data = load_data("data/03_test.txt").unwrap();
         assert_eq!(solve_first(data), 357);
     }
 
     #[test]
     fn test_solve_second() {
-        let data = load_data("data/test.txt").unwrap();
+        let data = load_data("data/03_test.txt").unwrap();
         assert_eq!(solve_second(data), 3121910778619);
     }
 }
