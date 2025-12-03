@@ -1,4 +1,4 @@
-use std::{collections::VecDeque, io::Read};
+use std::io::Read;
 
 fn load_data(path: &str) -> Result<Vec<String>, std::io::Error> {
     let mut file = std::fs::File::open(path)?;
@@ -36,8 +36,6 @@ fn solve_first(data: Vec<String>) -> u32 {
 
 fn solve_second(data: Vec<String>) -> u64 {
     // now keep any 12 digits out of the N existing, in order
-    // The idea, is that to start, keep the biggest number of the
-    // N existing. Then, throw away anything to the left. Then recursively solve.
     let result: Vec<String> = data
         .iter()
         .map(|line| get_biggest_out_of_n(line.clone(), 12))
@@ -49,6 +47,12 @@ fn solve_second(data: Vec<String>) -> u64 {
 }
 
 fn get_biggest_out_of_n(data: String, n: usize) -> String {
+    // Recursive solution.
+    // To start, get the data.len() - n first characters.
+    // Then, get the biggest character in the data and its index.
+    // Throw away anything to the left of the biggest character and apply recursively
+    // with n - 1
+
     //println!("data: {}, n: {}", data, n);
 
     let to_compare_length = (data.len() + 1) - n;
