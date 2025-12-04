@@ -84,6 +84,7 @@ fn main() {
     println!("{}", solve_second(load_data("data/02.txt").unwrap()));
 }
 
+#[cfg(test)]
 mod tests {
     use super::*;
 
